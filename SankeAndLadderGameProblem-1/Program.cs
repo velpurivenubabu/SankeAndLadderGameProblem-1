@@ -27,16 +27,16 @@ namespace SankeAndLadderGameProblem_1
                 {
                     case LADDER:
                         playerPosition += DieNumber; // If ladder comes player position will be incremented;
-                        if (playerPosition > finalPosition)
+                        if (playerPosition > finalPosition) // This If condition executed When ever player position More than 100 and sets previous value if the die number is more than required number
                         {
-                            playerPosition -= DieNumber;
+                            playerPosition -= DieNumber; // seting player position to previous position
                         }
                         break;
                     case SNAKE:
                         playerPosition -= DieNumber; // If Snake comes player position will be decremented;
-                        if (playerPosition < initialPosition)
+                        if (playerPosition < initialPosition) // This If condition executed When ever player position less than 0 and sets Value player initial value zero;
                         {
-                            playerPosition = initialPosition;
+                            playerPosition = initialPosition; 
                         }
 
                         break;
