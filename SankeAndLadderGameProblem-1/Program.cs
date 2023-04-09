@@ -10,9 +10,11 @@ namespace SankeAndLadderGameProblem_1
             int initialPosition = 0;
             int finalPosition = 100;
             int playerPosition = initialPosition;
+            int DieCount = 0;
             Console.WriteLine("Welcome To Snake Ladder Game!");
             while (playerPosition < finalPosition)
             {
+                DieCount++;
                 Random random = new Random();
                 int DieNumber = random.Next(1, 7);
                 Console.WriteLine("DieNumber : "+ DieNumber);
@@ -57,7 +59,8 @@ namespace SankeAndLadderGameProblem_1
                 Console.WriteLine("playerPosition : " + playerPosition);
 
             }
-            Console.WriteLine("Player Final Position : " + playerPosition);
+            Console.WriteLine("DieCount : " + DieCount);
+            Console.WriteLine("Player Final Position : " + playerPosition + " And Die Rolled For " + DieCount + " Times");
             
         }
     }
