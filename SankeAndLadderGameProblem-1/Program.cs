@@ -18,9 +18,10 @@ namespace SankeAndLadderGameProblem_1
                 Console.WriteLine("DieNumber : "+ DieNumber);
                 //UC3 Setting Options For the Game(NoPlay, Ladd);
                 Random random1 = new Random();
-                int playerOption = random1.Next(0, 3);
+                int playerOption = random1.Next(0,4);
                 const int SNAKE = 1;
                 const int LADDER = 2;
+                const int noPlay = 0;
                 Console.WriteLine("PlayerOption : " + playerOption);
                 //Console.WriteLine("playerPosition : " + playerPosition);
                 switch (playerOption)
@@ -40,8 +41,17 @@ namespace SankeAndLadderGameProblem_1
                         }
 
                         break;
-                    default:
+                    case noPlay:
                         playerPosition = playerPosition; // If Noplay comes player should stay on the Same position;
+                        break;
+
+                    default:
+                        playerPosition += DieNumber;
+                        if (playerPosition > finalPosition) // This If condition executed When ever player position More than 100 and sets previous value if the die number is more than required number
+                        {
+                            playerPosition -= DieNumber; // seting player position to previous position
+                        }
+
                         break;
                 }
                 Console.WriteLine("playerPosition : " + playerPosition);
