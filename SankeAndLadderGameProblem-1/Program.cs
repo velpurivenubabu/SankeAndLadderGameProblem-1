@@ -13,7 +13,7 @@ namespace SankeAndLadderGameProblem_1
             int player2= initialPosition;
             int DieCount = 0;
             Console.WriteLine("Welcome To Snake Ladder Game!");
-            while ((player1 < finalPosition) || (player1 < finalPosition))
+            while ((player1 < finalPosition) && (player2 < finalPosition))
             {
                 DieCount++;
                 Random random1= new Random();
@@ -101,7 +101,7 @@ namespace SankeAndLadderGameProblem_1
                 Console.WriteLine("player2: "+ player2);
 
             }
-            Console.WriteLine("DieCount : " + DieCount);
+            Console.WriteLine("DieCount : " + DieCount); // This If condition finds the Winner among Two Players
             if (player1==finalPosition)
             {
                 Console.WriteLine("Winner is Player1 and Die count is " + DieCount + " Times");
